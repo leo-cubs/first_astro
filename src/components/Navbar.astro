@@ -1,0 +1,46 @@
+---
+
+---
+
+<nav class="bg-blue-600 text-white p-4 flex justify-between items-center">
+  <div class="text-xl font-bold">
+    <p class="logo">HectorEDev.</p>
+  </div>
+  <ul class="menu-item flex space-x-6">
+    <li><a href="/" class="hover:underline">Inicio</a></li>
+    <li><a href="/Portfolio" class="hover:underline">Portafolio</a></li>
+    <li><a href="/Astro" class="hover:underline">Astro</a></li>
+    <li><a href="/Tailwind" class="hover:underline">Tailwind</a></li>
+    <li><a href="/GSAP" class="hover:underline">GSAP</a></li>
+    <li><a href="/Blog" class="hover:underline">Blog</a></li>
+    <li><a href="/Services" class="hover:underline">Servicios</a></li>
+    <li><a href="/Contact" class="hover:underline">Contacto</a></li>
+    <li><a href="/Test2" class="hover:underline">Test</a></li>
+  </ul>
+</nav>
+
+<script type="module">
+  import gsap from "https://cdn.skypack.dev/gsap";
+
+  // ============================
+  // ANIMACIÓN DEL LOGO
+  // ============================
+  gsap.from(".logo", {
+    color: `rgb(${gsap.utils.random(0, 255)}, ${gsap.utils.random(0, 255)}, ${gsap.utils.random(0, 255)})`,
+    backgroundColor: `rgb(${gsap.utils.random(0, 255)}, ${gsap.utils.random(0, 255)}, ${gsap.utils.random(0, 255)})`,
+    x: -100, // Mover desde la izquierda
+    rotate: -360, // Rotar desde -360 grados
+    scale: 1, // Escala inicial
+    duration: 1, // Duración de la animación
+    ease: "back.out", // Tipo de animación con rebote
+  });
+
+  // Animar los items del menú
+  gsap.from(".menu-item li", {
+    y: -30,
+    opacity: 0,
+    duration: 1,
+    ease: "power3.out",
+    stagger: 0.1,
+  });
+</script>

@@ -1,0 +1,102 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout>
+  <div class="gsap container mx-20 p-8 bg-gray-100 rounded-lg shadow-md">
+    <h1 class="text-3xl font-bold mb-4 hero-title">
+      Bienvenido a mi página GSAP
+    </h1>
+    <p class="text-lg">Aquí puedes aprender sobre animaciones con GSAP.</p>
+    <p class="text-lg">
+      Explora ejemplos y tutoriales para mejorar tus habilidades en animación
+      web.
+    </p>
+    <p class="text-lg">
+      GSAP es una biblioteca poderosa para crear animaciones fluidas y
+      eficientes en la web.
+    </p>
+    <p class="text-lg">
+      Desde animaciones simples hasta complejas, GSAP te permite llevar tus
+      proyectos al siguiente nivel.
+    </p>
+    <p class="text-lg">
+      ¡Comienza a explorar y crea animaciones impresionantes con GSAP!
+    </p>
+    <p class="text-lg">
+      Para más información, visita la
+      <a
+        href="https://greensock.com/gsap/"
+        class="text-blue-600 hover:underline">documentación oficial de GSAP</a
+      >.
+    </p>
+  </div>
+  <div class="bg-gray-100 flex p-8 items-center justify-center">
+    <div class="box bg-blue-600 text-white text-xl p-6 rounded shadow-lg">
+      Hola, soy una caja animada con GSAP 🎉
+    </div>
+  </div>
+
+  <div class="box bg-blue-500 text-white p-6 rounded text-center my-4">
+    Y yo soy una caja animada con GSAP 💫
+  </div>
+
+  <div class="bg-gray-100 min-h-screen flex items-center justify-center">
+    <div class="box bg-blue-600 text-white text-xl p-6 rounded shadow-lg">
+      Hola, yo no soy una caja animada solo pasaba por aqui... con GSAP 🎉
+    </div>
+  </div>
+
+  <!-- ✅ GSAP cargado solo en el cliente -->
+  <script type="module">
+    import gsap from "https://cdn.skypack.dev/gsap";
+    import SplitType from "https://cdn.skypack.dev/split-type";
+
+    // Animar cajas
+    gsap.from(".box", {
+      y: 60,
+      opacity: 0,
+      duration: 1.2,
+      ease: "power2.out",
+      stagger: 0.2,
+    });
+
+    // Animar cada letra de la cabecera con hover
+    const split = new SplitType(".hero-title", { types: "chars" });
+    split.chars.forEach((char, i) => {
+      gsap.from(char, {
+        y: gsap.utils.random(-150, 150),
+        x: gsap.utils.random(-300, 300),
+        rotate: gsap.utils.random(-360, 360),
+        scale: gsap.utils.random(0.5, 2),
+        opacity: 0,
+        duration: 0.75,
+        ease: "back.out",
+        delay: i * 0.02,
+      });
+
+      char.addEventListener("mouseenter", () => {
+        gsap.to(char, {
+          y: gsap.utils.random(-30, 30),
+          x: gsap.utils.random(-30, 30),
+          rotate: gsap.utils.random(-90, 90),
+          scale: gsap.utils.random(0.8, 1.5),
+          duration: 0.4,
+          color: `rgb(${gsap.utils.random(0, 255)}, ${gsap.utils.random(0, 255)}, ${gsap.utils.random(0, 255)})`,
+        });
+
+        setTimeout(() => {
+          gsap.to(char, {
+            y: 0,
+            x: 0,
+            rotate: 0,
+            scale: 1,
+            duration: 0.4,
+            ease: "back.out",
+            color: "#1f2937",
+          });
+        }, 1000);
+      });
+    });
+  </script>
+</Layout>

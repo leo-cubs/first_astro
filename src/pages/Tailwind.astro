@@ -1,0 +1,376 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout>
+  <div
+    class="tailwind max-w-4xl mx-auto my-10 p-6 bg-gray-100 rounded-lg shadow-md"
+  >
+    <!-- contenido -->
+    <h1 class="text-3xl font-bold mb-4">Bienvenido a mi página Tailwind</h1>
+    <p class="text-lg">
+      Esta página está diseñada utilizando Tailwind CSS, un framework de CSS
+      altamente personalizable y eficiente.
+    </p>
+    <p class="text-lg">
+      Con Tailwind, puedes crear diseños responsivos y modernos sin necesidad de
+      escribir CSS personalizado.
+    </p>
+  </div>
+
+  <p class="text-base text-gray-700 leading-relaxed mt-4 text-center py-6">
+    Aqui te muestro un poco con ejemplos de cómo usar Tailwind CSS para
+    estilizar
+  </p>
+
+  <p class="text-base text-gray-700 leading-relaxed mt-4 text-center py-6">
+    Este es un párrafo de ejemplo. Puedes ajustar el color, tamaño, espacio
+    entre líneas y márgenes fácilmente.
+  </p>
+
+  <div class="max-w-4xl mx-auto my-10 p-6 bg-gray-100 rounded-lg shadow-md">
+    <h2 class="text-2xl font-bold text-center mb-6">
+      Caja principal contenedora
+    </h2>
+    <p class="text-center text-gray-600 mb-6">
+      Esta caja usa: <code>max-w-4xl</code> (ancho máx.), <code>mx-auto</code> (centrado
+      horizontal), <code>my-10</code> (margen vertical), <code>p-6</code> (espaciado
+      interior), <code>bg-gray-100</code> (fondo gris claro), <code
+        >rounded-lg</code
+      > (bordes redondeados) y <code>shadow-md</code> (sombra).
+    </p>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <!-- Caja 1: sombra y fondo sólido -->
+      <div class="bg-blue-500 text-white p-4 rounded shadow-lg">
+        <h3 class="text-lg font-bold mb-2">Caja 1: sombra y fondo sólido</h3>
+        <p class="text-sm">
+          <code>bg-blue-500</code> aplica un color azul.
+          <code>p-4</code> añade padding.
+          <code>rounded</code> redondea bordes.
+          <code>shadow-lg</code> aplica una sombra grande.
+          <code>text-white</code> cambia el color del texto.
+        </p>
+      </div>
+
+      <!-- Caja 2: fondo con gradiente -->
+      <div
+        class="bg-gradient-to-r from-pink-500 to-yellow-500 text-white p-4 rounded"
+      >
+        <h3 class="text-lg font-bold mb-2">Caja 2: fondo gradiente</h3>
+        <p class="text-sm">
+          <code>bg-gradient-to-r</code> crea un gradiente horizontal.
+          <code>from-pink-500</code> inicia en rosa.
+          <code>to-yellow-500</code> termina en amarillo.
+          <code>p-4</code> y <code>rounded</code> igual que antes.
+          <code>text-white</code> para contraste.
+        </p>
+      </div>
+
+      <!-- Caja 3: borde sólido -->
+      <div class="border border-green-600 p-4 rounded text-gray-800">
+        <h3 class="text-lg font-bold mb-2">Caja 3: borde sólido</h3>
+        <p class="text-sm">
+          <code>border</code> aplica un borde.
+          <code>border-green-600</code> define el color.
+          <code>p-4</code> añade espacio interno.
+          <code>rounded</code> suaviza los bordes.
+          <code>text-gray-800</code> mejora legibilidad.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- CAJA CON EFECTO HOVER -->
+  <div
+    class="max-w-xl mx-auto my-10 p-6 bg-white rounded-lg shadow-md hover:shadow-xl hover:scale-105 hover:bg-blue-100 transition duration-300 ease-in-out cursor-pointer"
+  >
+    <h2 class="text-2xl font-bold mb-2">Caja con efecto hover</h2>
+    <p class="text-gray-700 text-sm">
+      Esta caja usa:
+      <br />
+      <code>hover:shadow-xl</code> → al pasar el ratón, la sombra se hace más profunda.
+      <code>hover:scale-105</code> → se agranda un 5% al hacer hover (escala).
+      <code>hover:bg-blue-100</code> → el fondo cambia a azul claro al hacer hover.
+      <code>transition</code> + <code>duration-300</code> → suaviza el cambio durante
+      300 ms.
+      <code>ease-in-out</code> → define una animación suave de entrada y salida.
+      <code>cursor-pointer</code> → cambia el cursor a una mano al pasar el ratón.
+    </p>
+  </div>
+
+  <!-- seccion siguiente botones y img y nav -->
+
+  <div class="max-w-5xl mx-auto my-16 px-4">
+    <h2 class="text-3xl font-bold text-center mb-10">
+      Ejemplos de efectos <code>hover:</code> en diferentes elementos
+    </h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- 1. Botón con hover -->
+      <div
+        class="p-6 bg-white rounded shadow hover:bg-green-500 hover:text-white transition duration-300 text-center cursor-pointer"
+      >
+        <h3 class="text-lg font-bold mb-2">Botón interactivo</h3>
+        <button
+          class="bg-green-200 text-green-900 font-semibold py-2 px-4 rounded hover:bg-green-700 hover:text-white transition duration-300"
+        >
+          Pasa el ratón por aquí
+        </button>
+        <p class="text-sm mt-4 text-gray-700">
+          <code>hover:bg-green-700</code> cambia el fondo al pasar el ratón.
+          <code>hover:text-white</code> cambia el color del texto.
+          <code>transition</code> + <code>duration-300</code> hace que el efecto
+          sea suave.
+          <code>rounded</code> aplica bordes redondeados al botón.
+        </p>
+      </div>
+
+      <!-- 2. Imagen con hover -->
+      <div
+        class="p-6 bg-white rounded shadow text-center hover:shadow-xl hover:scale-105 transition duration-300 ease-in-out"
+      >
+        <h3 class="text-lg font-bold mb-2">Imagen con efecto zoom</h3>
+        <img
+          src="https://source.unsplash.com/300x200/?nature"
+          alt="Naturaleza"
+          class="rounded-lg mx-auto mb-3"
+        />
+        <p class="text-sm text-gray-700">
+          <code>hover:scale-105</code> aumenta el tamaño ligeramente.
+          <code>hover:shadow-xl</code> aplica una sombra más fuerte al pasar el ratón.
+          <code>transition duration-300 ease-in-out</code> controla la suavidad del
+          efecto.
+          <code>rounded-lg</code> da forma redondeada a la imagen.
+        </p>
+      </div>
+
+      <!-- 3. Menú con hover en los items -->
+      <div class="p-6 bg-white rounded shadow">
+        <h3 class="text-lg font-bold mb-4 text-center">Menú de navegación</h3>
+        <ul class="space-y-2">
+          <li
+            class="px-4 py-2 bg-gray-100 rounded hover:bg-blue-500 hover:text-white transition"
+          >
+            Inicio
+          </li>
+          <li
+            class="px-4 py-2 bg-gray-100 rounded hover:bg-blue-500 hover:text-white transition"
+          >
+            Servicios
+          </li>
+          <li
+            class="px-4 py-2 bg-gray-100 rounded hover:bg-blue-500 hover:text-white transition"
+          >
+            Contacto
+          </li>
+        </ul>
+        <p class="text-sm mt-4 text-gray-700">
+          Cada <code>li</code> tiene:
+          <code>hover:bg-blue-500</code> para cambiar el fondo.
+          <code>hover:text-white</code> para cambiar el texto.
+          <code>transition</code> hace que el cambio sea suave.
+          <code>rounded</code> redondea las esquinas de los ítems.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="max-w-5xl mx-auto my-20 px-4">
+    <h2 class="text-3xl font-bold text-center mb-10">
+      Ejemplos de clases <code>focus:</code> y <code>active:</code> con Tailwind
+      CSS
+    </h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+      <!-- 🔍 FOCUS: en campos de formulario -->
+      <div class="bg-white p-6 rounded shadow">
+        <h3 class="text-xl font-bold mb-4">
+          🔍 Ejemplo con <code>focus:</code> en inputs
+        </h3>
+        <input
+          type="text"
+          placeholder="Escribe tu nombre..."
+          class="w-full p-3 border border-gray-300 rounded outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-300"
+        />
+        <p class="text-sm mt-4 text-gray-700">
+          <code>focus:ring-2</code> ➝ crea un anillo al enfocar el input.
+          <code>focus:ring-blue-500</code> ➝ define el color del anillo.
+          <code>focus:border-blue-500</code> ➝ cambia el borde cuando tiene el foco.
+          <code>outline-none</code> ➝ elimina el contorno por defecto del navegador.
+          <code>transition duration-300</code> ➝ suaviza el cambio.
+        </p>
+      </div>
+
+      <!-- 🖱️ ACTIVE: en botones -->
+      <div class="bg-white p-6 rounded shadow text-center">
+        <h3 class="text-xl font-bold mb-4">
+          🖱️ Ejemplo con <code>active:</code> en botones
+        </h3>
+        <button
+          class="bg-blue-600 text-white font-semibold py-3 px-6 rounded hover:bg-blue-700 active:scale-95 active:bg-blue-800 transition duration-200"
+        >
+          Haz clic aquí
+        </button>
+        <p class="text-sm mt-4 text-gray-700 text-left">
+          <code>active:scale-95</code> ➝ el botón se reduce ligeramente al hacer
+          clic.
+          <code>active:bg-blue-800</code> ➝ cambia el color de fondo mientras está
+          presionado.
+          <code>hover:bg-blue-700</code> ➝ cambia el color al pasar el ratón.
+          <code>transition duration-200</code> ➝ suaviza la animación del clic.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="max-w-2xl mx-auto my-20 px-6 py-10 bg-white rounded-lg shadow-lg">
+    <h2 class="text-3xl font-bold text-center mb-8">
+      📬 Formulario de contacto interactivo
+    </h2>
+
+    <form class="space-y-6">
+      <!-- Nombre -->
+      <div>
+        <label for="name" class="block font-semibold mb-1">Nombre</label>
+        <input
+          type="text"
+          id="name"
+          placeholder="Tu nombre completo"
+          class="w-full p-3 border border-gray-300 rounded focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none hover:border-blue-400 transition duration-200"
+          required
+        />
+        <p class="text-sm mt-2 text-gray-600">
+          <code>focus:ring-2</code> ➝ anillo azul al enfocar.
+          <code>hover:border-blue-400</code> ➝ cambia el borde al pasar el ratón.
+          <code>outline-none</code> ➝ elimina borde por defecto.
+          <code>transition duration-200</code> ➝ transición suave.
+        </p>
+      </div>
+
+      <!-- Email -->
+      <div>
+        <label for="email" class="block font-semibold mb-1"
+          >Correo electrónico</label
+        >
+        <input
+          type="email"
+          id="email"
+          placeholder="correo@ejemplo.com"
+          class="w-full p-3 border border-gray-300 rounded focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none hover:border-indigo-400 transition duration-200"
+          required
+        />
+        <p class="text-sm mt-2 text-gray-600">
+          Este campo usa las mismas clases de <code>focus:</code> y <code
+            >hover:</code
+          >
+          pero en color <code>indigo</code> para variar la estética.
+        </p>
+      </div>
+
+      <!-- Mensaje -->
+      <div>
+        <label for="message" class="block font-semibold mb-1">Mensaje</label>
+        <textarea
+          id="message"
+          rows="5"
+          placeholder="Escribe tu mensaje aquí..."
+          class="w-full p-3 border border-gray-300 rounded focus:ring-2 focus:ring-teal-500 focus:border-teal-500 outline-none hover:border-teal-400 transition duration-200 resize-none"
+          required></textarea>
+        <p class="text-sm mt-2 text-gray-600">
+          <code>resize-none</code> evita que se redimensione.
+          <code>focus:ring-teal-500</code> y <code>hover:border-teal-400</code> adaptan
+          el color al tema.
+        </p>
+      </div>
+
+      <!-- Botón de envío -->
+      <div class="text-center">
+        <button
+          type="submit"
+          class="bg-blue-600 text-white font-bold py-3 px-6 rounded hover:bg-blue-700 active:bg-blue-800 transition duration-300"
+        >
+          Enviar mensaje
+        </button>
+        <p class="text-sm mt-2 text-gray-600">
+          El botón usa <code>hover:</code> y <code>active:</code> para simular el
+          clic real.
+          <code>rounded</code>, <code>transition</code> y colores ayudan a destacar
+          la acción.
+        </p>
+      </div>
+    </form>
+  </div>
+
+  <div class="max-w-2xl mx-auto my-20 px-6 py-10 bg-white rounded-lg shadow-lg">
+    <h2 class="text-3xl font-bold text-center mb-8">
+      ✅ Formulario con validación visual
+    </h2>
+
+    <!-- ✅ Mensaje de éxito simulado -->
+    <div
+      class="bg-green-100 text-green-800 border border-green-400 p-4 rounded mb-6"
+    >
+      ¡Mensaje enviado correctamente!
+      <p class="text-sm mt-1 text-green-700">
+        <code>bg-green-100</code> ➝ fondo verde claro.
+        <code>text-green-800</code> ➝ texto destacado.
+        <code>border-green-400</code> ➝ borde verde suave.
+        <code>rounded</code> y <code>p-4</code> para estilo general.
+      </p>
+    </div>
+
+    <form class="space-y-6">
+      <!-- Campo con error simulado -->
+      <div>
+        <label for="email" class="block font-semibold mb-1"
+          >Correo electrónico</label
+        >
+        <input
+          type="email"
+          id="email"
+          placeholder="correo@ejemplo.com"
+          class="w-full p-3 border border-red-500 rounded focus:ring-2 focus:ring-red-500 focus:border-red-500 outline-none hover:border-red-400 transition duration-200"
+          required
+        />
+        <p class="text-sm mt-2 text-red-600">
+          Este campo es obligatorio y debe contener un correo válido.
+          <br />
+          <code>border-red-500</code>, <code>focus:border-red-500</code> y <code
+            >text-red-600</code
+          > simulan un error.
+        </p>
+      </div>
+
+      <!-- Campo correcto -->
+      <div>
+        <label for="name" class="block font-semibold mb-1">Nombre</label>
+        <input
+          type="text"
+          id="name"
+          placeholder="Tu nombre completo"
+          class="w-full p-3 border border-gray-300 rounded focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none hover:border-blue-400 transition duration-200"
+          required
+        />
+        <p class="text-sm mt-2 text-gray-600">
+          Este campo está validado correctamente.
+          <code>focus:</code> y <code>hover:</code> actúan con colores estándar.
+        </p>
+      </div>
+
+      <!-- Botón de envío -->
+      <div class="text-center">
+        <button
+          type="submit"
+          class="bg-blue-600 text-white font-bold py-3 px-6 rounded hover:bg-blue-700 active:bg-blue-800 transition duration-300"
+        >
+          Enviar mensaje
+        </button>
+        <p class="text-sm mt-2 text-gray-600">
+          Si todo es correcto, se puede mostrar un mensaje de éxito (como el de
+          arriba).
+        </p>
+      </div>
+    </form>
+  </div>
+</Layout>

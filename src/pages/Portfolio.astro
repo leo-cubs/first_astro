@@ -1,0 +1,168 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout>
+  <div class="portafolio container mx-auto p-6 bg-white shadow-lg rounded-lg">
+    <h1 class="text-3xl font-bold mb-4 text-center text-gray-800">
+      Bienvenido a mi Portafolio
+    </h1>
+    <p class="text-lg text-gray-700 text-center mb-6">
+      Aquí puedes ver algunos de mis proyectos destacados. Cada uno refleja mi
+      pasión por el desarrollo moderno con tecnologías como Astro, Tailwind y
+      GSAP.
+    </p>
+
+    <!-- Proyectos destacados -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Primeros 3 -->
+      <div
+        class="proyecto fade-up bg-gray-50 p-4 rounded-lg shadow-md hover:shadow-xl transition duration-300"
+      >
+        <h2 class="text-xl font-semibold text-blue-700 mb-2">
+          Landing Page Moderna
+        </h2>
+        <p class="text-gray-600 mb-3">
+          Sitio web de una empresa con diseño responsive, animaciones de scroll
+          y uso de Tailwind.
+        </p>
+        <a href="#" class="text-blue-600 hover:underline">Ver más →</a>
+      </div>
+
+      <div
+        class="proyecto fade-up bg-gray-50 p-4 rounded-lg shadow-md hover:shadow-xl transition duration-300"
+      >
+        <h2 class="text-xl font-semibold text-blue-700 mb-2">
+          Panel de Administración
+        </h2>
+        <p class="text-gray-600 mb-3">
+          Panel construido con componentes reutilizables, filtros dinámicos y
+          animaciones suaves con GSAP.
+        </p>
+        <a href="#" class="text-blue-600 hover:underline">Ver más →</a>
+      </div>
+
+      <div
+        class="proyecto fade-up bg-gray-50 p-4 rounded-lg shadow-md hover:shadow-xl transition duration-300"
+      >
+        <h2 class="text-xl font-semibold text-blue-700 mb-2">
+          Blog Personal con Astro
+        </h2>
+        <p class="text-gray-600 mb-3">
+          Blog estático con posts dinámicos, diseño limpio y buen rendimiento.
+        </p>
+        <a href="#" class="text-blue-600 hover:underline">Ver más →</a>
+      </div>
+
+      <!-- Nuevos 3 proyectos -->
+      <div
+        class="proyecto from-left bg-white p-4 rounded-lg shadow-md hover:shadow-xl transition duration-300"
+      >
+        <h2 class="text-xl font-semibold text-green-700 mb-2">Tienda Online</h2>
+        <p class="text-gray-600 mb-3">
+          E-commerce desarrollado con Astro y Stripe, animaciones de carrito y
+          pasarela de pago.
+        </p>
+        <a href="#" class="text-green-600 hover:underline">Ver más →</a>
+      </div>
+
+      <div
+        class="proyecto from-right bg-white p-4 rounded-lg shadow-md hover:shadow-xl transition duration-300"
+      >
+        <h2 class="text-xl font-semibold text-purple-700 mb-2">
+          Portfolio Interactivo
+        </h2>
+        <p class="text-gray-600 mb-3">
+          Sitio de presentación personal con efectos parallax y animaciones de
+          entrada al hacer scroll.
+        </p>
+        <a href="#" class="text-purple-600 hover:underline">Ver más →</a>
+      </div>
+
+      <div
+        class="proyecto from-left bg-white p-4 rounded-lg shadow-md hover:shadow-xl transition duration-300"
+      >
+        <h2 class="text-xl font-semibold text-red-700 mb-2">Web de Eventos</h2>
+        <p class="text-gray-600 mb-3">
+          Calendario interactivo, detalles de ponencias, y formulario de
+          registro animado.
+        </p>
+        <a href="#" class="text-red-600 hover:underline">Ver más →</a>
+      </div>
+    </div>
+
+    <div class="text-center mt-10">
+      <p class="text-lg">
+        ¿Te gustaría trabajar conmigo?
+        <a href="/Contact" class="text-blue-600 hover:underline"
+          >Contáctame aquí</a
+        >.
+      </p>
+    </div>
+  </div>
+
+  <!-- GSAP desde CDN -->
+  <script type="module">
+    import gsap from "https://cdn.skypack.dev/gsap";
+    import { ScrollTrigger } from "https://cdn.skypack.dev/gsap/ScrollTrigger";
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Animación fade-up para los primeros tres
+    gsap.utils.toArray(".fade-up").forEach((el) => {
+      gsap.fromTo(
+        el,
+        { opacity: 0, y: 60 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: el,
+            start: "top 90%",
+            toggleActions: "play none none none",
+          },
+        }
+      );
+    });
+
+    // Animación desde la izquierda
+    gsap.utils.toArray(".from-left").forEach((el) => {
+      gsap.fromTo(
+        el,
+        { x: -100, opacity: 0 },
+        {
+          x: 0,
+          opacity: 1,
+          duration: 1,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: el,
+            start: "top 90%",
+            toggleActions: "play none none none",
+          },
+        }
+      );
+    });
+
+    // Animación desde la derecha
+    gsap.utils.toArray(".from-right").forEach((el) => {
+      gsap.fromTo(
+        el,
+        { x: 100, opacity: 0 },
+        {
+          x: 0,
+          opacity: 1,
+          duration: 1,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: el,
+            start: "top 90%",
+            toggleActions: "play none none none",
+          },
+        }
+      );
+    });
+  </script>
+</Layout>

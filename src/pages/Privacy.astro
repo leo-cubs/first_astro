@@ -1,0 +1,56 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout>
+  <div
+    class="privacy container mx-auto p-6 bg-white shadow-md rounded-lg mt-12 opacity-0"
+  >
+    <h1 class="text-3xl font-bold text-indigo-700 mb-6">
+      Política de Privacidad
+    </h1>
+
+    <p class="mb-4 text-gray-700">
+      Esta Política de Privacidad describe cómo se recopila, utiliza y protege
+      la información personal de los usuarios de este sitio web. Al utilizar
+      este sitio, aceptas las prácticas descritas en esta política.
+    </p>
+
+    <h2 class="text-2xl font-semibold text-indigo-800 mb-2">
+      Información que recopilamos
+    </h2>
+    <p class="mb-4 text-gray-700">
+      Recopilamos información personal que nos proporcionas al registrarte,
+      suscribirte a nuestro boletín o contactarnos a través de formularios. Esta
+      información puede incluir tu nombre, correo electrónico y cualquier otro
+      dato que decidas compartir.
+    </p>
+
+    <h2 class="text-2xl font-semibold text-indigo-800 mb-2">
+      Uso de la información
+    </h2>
+    <p class="mb-4 text-gray-700">
+      Utilizamos la información recopilada para responder a tus consultas,
+      mejorar nuestros servicios, y enviarte actualizaciones si te has suscrito
+      a nuestro boletín.
+    </p>
+
+    <h2 class="text-2xl font-semibold text-indigo-800 mb-2">
+      Protección de datos
+    </h2>
+    <p class="mb-4 text-gray-700">
+      Implementamos medidas de seguridad para proteger tu información personal
+      contra accesos no autorizados, alteraciones o divulgación.
+    </p>
+  </div>
+
+  <script type="module">
+    import gsap from "https://cdn.skypack.dev/gsap";
+    gsap.to(".privacy", {
+      opacity: 1,
+      y: -20,
+      duration: 1.2,
+      ease: "power2.out",
+    });
+  </script>
+</Layout>

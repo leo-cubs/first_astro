@@ -1,0 +1,37 @@
+---
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+import "../styles/global.css";
+// import "../styles/taildinwd.css";
+const { children } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Astro Basics</title>
+    <!-- <link rel="stylesheet" href="/src/styles/global.css" /> -->
+  </head>
+  <body>
+    <Navbar />
+    <main class="container mx-auto p-4">
+      {children}
+    </main>
+    <slot />
+    <Footer />
+    <!-- <slot /> -->
+  </body>
+</html>
+
+<style>
+  html,
+  body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+  }
+</style>

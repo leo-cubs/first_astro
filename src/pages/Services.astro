@@ -1,0 +1,51 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout>
+  <section class="py-10 px-4 max-w-5xl mx-auto">
+    <h1 class="text-3xl font-semibold mb-8 text-center text-indigo-800">
+      Nuestros Servicios
+    </h1>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 service-cards">
+      <div
+        class="bg-white shadow-md p-6 rounded-lg border opacity-0 translate-y-6"
+      >
+        <h2 class="text-xl font-bold mb-2">Diseño Web</h2>
+        <p class="text-gray-700">
+          Sitios modernos, rápidos y adaptables a cualquier dispositivo.
+        </p>
+      </div>
+      <div
+        class="bg-white shadow-md p-6 rounded-lg border opacity-0 translate-y-6"
+      >
+        <h2 class="text-xl font-bold mb-2">Desarrollo Backend</h2>
+        <p class="text-gray-700">
+          APIs, bases de datos y lógica de negocio con Node.js o Java Spring
+          Boot.
+        </p>
+      </div>
+      <div
+        class="bg-white shadow-md p-6 rounded-lg border opacity-0 translate-y-6"
+      >
+        <h2 class="text-xl font-bold mb-2">Consultoría Digital</h2>
+        <p class="text-gray-700">
+          Asesoría para potenciar tu presencia online y automatizar procesos.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <script type="module">
+    import gsap from "https://cdn.skypack.dev/gsap";
+
+    gsap.to(".service-cards > div", {
+      opacity: 1,
+      y: 0,
+      duration: 0.8,
+      ease: "power2.out",
+      stagger: 0.2,
+    });
+  </script>
+</Layout>

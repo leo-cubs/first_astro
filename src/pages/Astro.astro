@@ -1,0 +1,82 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout>
+  <section
+    class="astro max-w-4xl mx-auto px-6 py-16 bg-gradient-to-br from-blue-50 to-white shadow-lg rounded-lg"
+  >
+    <h1 class="text-4xl font-bold text-blue-700 mb-6 text-center">
+      Bienvenido a mi página Astro
+    </h1>
+
+    <div class="astro-content space-y-4 text-gray-700 text-lg leading-relaxed">
+      <p>
+        Astro es un moderno framework para construir sitios web rápidos, ligeros
+        y optimizados. Su arquitectura está pensada para enviar el mínimo
+        JavaScript posible al cliente.
+      </p>
+
+      <p>
+        Gracias a su sistema de componentes y compatibilidad con tecnologías
+        como Tailwind, React, Vue o incluso GSAP, es ideal para crear
+        experiencias ricas y muy eficientes.
+      </p>
+
+      <p>
+        En esta página descubrirás ejemplos prácticos, animaciones y buenas
+        prácticas con Astro. ¡Explora y aprende cómo llevar tu desarrollo
+        frontend al siguiente nivel!
+      </p>
+    </div>
+  </section>
+
+  <section
+    class="astro max-w-4xl mx-auto px-6 mt-10 mb-10 py-16 bg-gradient-to-br from-blue-50 to-white shadow-lg rounded-lg"
+  >
+    <h1 class="text-4xl font-bold text-blue-700 mb-6 text-center">
+      Siempre quise aprender Astro
+    </h1>
+
+    <div class="astro-content space-y-4 text-gray-700 text-lg leading-relaxed">
+      <p>
+        Ademas Astro te permite crear sitios web rápidos y optimizados,
+        combinando la potencia de componentes modernos con un enfoque en el
+        rendimiento. Explora más en la <a
+          href="https://astro.build"
+          class="text-blue-600 hover:underline">página oficial de Astro</a
+        >.
+      </p>
+      <p>
+        Esta basado en componentes, lo que te permite utilizar tecnologías como
+        React, Vue o Svelte, y optimiza automáticamente el envío de JavaScript
+        al cliente.
+      </p>
+
+      <p>
+        Además, su integración con Tailwind CSS facilita el diseño responsivo y
+        moderno.
+      </p>
+      <p>
+        Si sabes HTML y CSS, ¡ya tienes la base para comenzar a crear con Astro!
+        Puedes aprender más sobre sus características y cómo empezar en la <a
+          href="https://astro.build/docs"
+          class="text-blue-600 hover:underline"
+          >documentación oficial de Astro</a
+        >.
+      </p>
+    </div>
+  </section>
+</Layout>
+
+<script type="module">
+  import gsap from "https://cdn.skypack.dev/gsap";
+
+  gsap.from(".astro-content p", {
+    y: 50,
+    opacity: 0,
+    duration: 1,
+    stagger: 0.2,
+    ease: "power2.out",
+  });
+</script>

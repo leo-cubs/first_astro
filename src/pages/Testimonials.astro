@@ -1,0 +1,73 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout>
+  <section class="py-12 px-4 max-w-5xl mx-auto">
+    <h1 class="text-3xl font-semibold text-center mb-10 text-indigo-800">
+      Lo que dicen nuestros clientes
+    </h1>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 testimonios">
+      <div
+        class="bg-white shadow-lg rounded-lg p-6 border opacity-0 translate-y-6"
+      >
+        <p class="text-gray-700 italic mb-4">
+          “Gracias al equipo de Héctor, nuestra web ahora carga más rápido y
+          tenemos más visitas que nunca.”
+        </p>
+        <div class="text-sm font-semibold text-indigo-700">
+          María G. – CEO de TechNova
+        </div>
+      </div>
+
+      <div
+        class="bg-white shadow-lg rounded-lg p-6 border opacity-0 translate-y-6"
+      >
+        <p class="text-gray-700 italic mb-4">
+          “Excelente trabajo, comunicación clara y resultados muy profesionales.
+          Lo recomiendo totalmente.”
+        </p>
+        <div class="text-sm font-semibold text-indigo-700">
+          Carlos R. – Fundador de EduDigital
+        </div>
+      </div>
+
+      <div
+        class="bg-white shadow-lg rounded-lg p-6 border opacity-0 translate-y-6"
+      >
+        <p class="text-gray-700 italic mb-4">
+          “Nos ayudaron a integrar nuestra API y automatizar procesos internos.
+          Hemos ahorrado muchísimo tiempo.”
+        </p>
+        <div class="text-sm font-semibold text-indigo-700">
+          Lucía M. – Directora de Proyectos en FinSolve
+        </div>
+      </div>
+
+      <div
+        class="bg-white shadow-lg rounded-lg p-6 border opacity-0 translate-y-6"
+      >
+        <p class="text-gray-700 italic mb-4">
+          “Su equipo convirtió nuestra antigua web en una plataforma moderna y
+          funcional. ¡Un antes y un después!”
+        </p>
+        <div class="text-sm font-semibold text-indigo-700">
+          Andrés T. – Gerente de ArtLife Studio
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script type="module">
+    import gsap from "https://cdn.skypack.dev/gsap";
+
+    gsap.to(".testimonios > div", {
+      opacity: 1,
+      y: 0,
+      duration: 0.9,
+      ease: "power2.out",
+      stagger: 0.25,
+    });
+  </script>
+</Layout>

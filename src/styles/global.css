@@ -1,0 +1,36 @@
+/* @import "tailwindcss"; */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.hero-title {
+  font-family: var(--ff-titles);
+  font-size: 4rem;
+  line-height: 1;
+}
+
+.hero-image img {
+  max-width: 100%;
+  border-radius: 1rem;
+}
+
+.logo {
+  font-family: var(--ff-titles);
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+.hero {
+  max-width: 1000px;
+  margin: 0 auto;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero-intro {
+    display: grid;
+    grid-template-columns: 1fr 3.5fr;
+    gap: 2rem;
+}

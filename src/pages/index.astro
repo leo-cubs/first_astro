@@ -1,0 +1,123 @@
+---
+// index.astro
+import Welcome from "../components/Welcome.astro";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout>
+  <Welcome />
+
+  <!-- INTRO -->
+  <div class="hero-intro flex flex-col items-center gap-6 py-10">
+    <div class="hero-image overflow-visible ml-10">
+      <img
+        src="/src/assets/hectordev.jpg"
+        alt="Héctor Developer"
+        class="w-48 h-auto rounded-xl shadow-lg"
+      />
+    </div>
+    <div
+      class="hero-title text-3xl md:text-4xl font-semibold text-center leading-relaxed text-gray-800 max-w-2xl"
+    >
+      <b>Soy Héctor.</b><br />
+      Hago contenido sobre desarrollo web y te presento mi nuevo proyecto con Astro,
+      Tailwind y GSAP.
+    </div>
+  </div>
+
+  <!-- SECCIÓN DE BIENVENIDA -->
+  <section
+    class="bienvenida-section bg-white text-gray-800 rounded-lg shadow-xl py-10 px-6 text-center"
+  >
+    <h1 class="text-4xl font-bold mb-4">Bienvenido a Mi Sitio Web</h1>
+    <p class="text-lg max-w-xl mx-auto">
+      Te doy soluciones modernas en desarrollo web, diseño responsive y
+      consultoría digital para llevar tu negocio al siguiente nivel.
+    </p>
+  </section>
+
+  <!-- ✅ SplitType desde CDN -->
+  <script src="https://unpkg.com/split-type"></script>
+
+  <!-- ✅ GSAP Animation -->
+  <script type="module">
+    import gsap from "https://cdn.skypack.dev/gsap";
+
+    // Animación entrada de bienvenida
+    gsap.from(".bienvenida-section", {
+      y: 60,
+      opacity: 0,
+      duration: 1.2,
+      ease: "power2.out",
+    });
+
+    // Esperar a que se cargue la página
+    window.addEventListener("load", () => {
+      const text = new SplitType(".hero-title", { types: "words, chars" });
+
+      // Animación de letras
+      text.chars.forEach((char, index) => {
+        let originalColor = window.getComputedStyle(char).color;
+
+        gsap
+          .timeline()
+          .from(char, {
+            y: gsap.utils.random(-150, 150),
+            x: gsap.utils.random(-300, 300),
+            rotate: gsap.utils.random(-360, 360),
+            scale: gsap.utils.random(0.5, 2),
+            opacity: 0,
+            duration: 0.8,
+            ease: "back.out",
+            delay: index * 0.015,
+          })
+          .from(
+            char,
+            {
+              color: `rgb(${gsap.utils.random(0, 255)},${gsap.utils.random(0, 255)},${gsap.utils.random(0, 255)})`,
+              duration: 1,
+            },
+            "-=0.5"
+          );
+
+        // Hover
+        char.addEventListener("mouseenter", () => {
+          gsap
+            .timeline()
+            .to(char, {
+              y: gsap.utils.random(-30, 30),
+              x: gsap.utils.random(-30, 30),
+              rotate: gsap.utils.random(-90, 90),
+              scale: gsap.utils.random(0.8, 1.5),
+              color: `rgb(${gsap.utils.random(0, 255)},${gsap.utils.random(0, 255)},${gsap.utils.random(0, 255)})`,
+              duration: 0.4,
+              ease: "power2.out",
+            })
+            .to(char, {
+              y: 0,
+              x: 0,
+              rotate: 0,
+              scale: 1,
+              color: originalColor,
+              duration: 0.4,
+              ease: "back.out",
+              delay: 1,
+            });
+        });
+      });
+
+      // Imagen del héroe
+      gsap.fromTo(
+        ".hero-image img",
+        { x: -200, opacity: 0 },
+        {
+          x: 0,
+          opacity: 1,
+          duration: 1.2,
+          delay: 0.5,
+          ease: "back.out(1.7)",
+        }
+      );
+    });
+  </script>
+</Layout>
